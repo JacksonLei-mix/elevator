@@ -14,7 +14,7 @@ import edu.wpi.first.units.measure.Current;
 import edu.wpi.first.units.measure.Temperature;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class MotorShooter extends SubsystemBase {
+public class MotorShooter2 extends SubsystemBase {
 
     private final TalonFX shooterMotor;
 
@@ -34,6 +34,20 @@ public class MotorShooter extends SubsystemBase {
 
     private static final double GEAR_RATIO = 20.0;
     private static final double WHEEL_CIRCUMFERENCE_IN = 4.0;
+    public enum MotorshooterStates{
+        IDLE,
+        ZERO,
+        HANDOFF,
+        SHOOT,
+        AMP,
+        PASS,
+        VOLTAGE,
+        OUTTAKE,
+        VELOCITY
+    }
+    public void loop(){
+        MotorshooterIO
+    }
 
     public MotorShooter(int motorID, String canBus) {
         shooterMotor = new TalonFX(motorID, canBus);
@@ -87,7 +101,7 @@ public class MotorShooter extends SubsystemBase {
     }
 
     public double getMotorTemperature() {
-        return motorTemp.getValue().getValue();
+        return motorTemp.getValue().getValue(); 
     }
 
     public double getMotorVelocity() {
